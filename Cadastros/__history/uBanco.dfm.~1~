@@ -1,0 +1,37 @@
+inherited frmHerancaCadastros1: TfrmHerancaCadastros1
+  Caption = 'frmHerancaCadastros1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PageControl1: TPageControl
+    inherited Listagem: TTabSheet
+      inherited Panel2: TPanel
+        inherited mskEdit: TMaskEdit
+          OnChange = nil
+        end
+      end
+    end
+  end
+  inherited Panel1: TPanel
+    inherited btnCancelar: TButton
+      OnClick = nil
+    end
+    inherited btnFechar: TButton
+      OnClick = nil
+    end
+    inherited btnNavigator: TDBNavigator
+      Hints.Strings = ()
+    end
+    inherited btnExcluir: TButton
+      OnClick = nil
+    end
+    inherited btnGravar: TButton
+      OnClick = nil
+    end
+    inherited btnAlterar: TButton
+      OnClick = nil
+    end
+    inherited btnNovo: TButton
+      OnClick = nil
+    end
+  end
+end

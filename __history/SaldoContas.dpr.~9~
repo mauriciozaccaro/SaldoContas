@@ -1,0 +1,19 @@
+program SaldoContas;
+
+uses
+  Vcl.Forms,
+  uPrincipal in 'uPrincipal.pas' {frmPrincipal},
+  uHerancaCadastros in 'Heranca\uHerancaCadastros.pas' {frmHerancaCadastros},
+  uBanco in 'Cadastros\uBanco.pas' {frmCadBancos},
+  uCliente in 'Cadastros\uCliente.pas' {frmCadClientes};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCadBancos, frmCadBancos);
+  Application.CreateForm(TfrmCadClientes, frmCadClientes);
+  Application.Run;
+end.
