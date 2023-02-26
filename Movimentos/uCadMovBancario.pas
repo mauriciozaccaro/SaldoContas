@@ -26,8 +26,8 @@ type
     Label4: TLabel;
     ComboBox1: TComboBox;
     Label5: TLabel;
-    DateTimePicker1: TDateTimePicker;
     edtDataMovimento: TLabel;
+    edtDataMov: TDateEdit;
   private
     { Private declarations }
   public

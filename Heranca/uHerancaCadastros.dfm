@@ -1,6 +1,7 @@
 object frmHerancaCadastros: TfrmHerancaCadastros
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
   Caption = 'frmHerancaCadastros'
   ClientHeight = 382
   ClientWidth = 659
@@ -12,15 +13,17 @@ object frmHerancaCadastros: TfrmHerancaCadastros
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object PageControl1: TPageControl
+  object pgcPrincipal: TPageControl
     Left = 0
     Top = 0
     Width = 659
     Height = 291
-    ActivePage = tabListagem
+    ActivePage = tabCadastro
     Align = alClient
     TabOrder = 0
     object tabListagem: TTabSheet
@@ -56,16 +59,19 @@ object frmHerancaCadastros: TfrmHerancaCadastros
         Height = 191
         Align = alClient
         DataSource = DtsListagemGrid
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDblClick = grdListagemGridDblClick
+        OnTitleClick = grdListagemGridTitleClick
       end
     end
     object tabCadastro: TTabSheet
-      Caption = 'tabCadastro'
+      Caption = 'Cadastro'
       ImageIndex = 1
     end
   end
@@ -88,14 +94,15 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Height = 25
       Caption = '&CANCELAR'
       TabOrder = 0
+      OnClick = btnCancelarClick
     end
-    object btnFechar: TButton
+    object btnExcluir: TButton
       Left = 369
       Top = 46
       Width = 75
       Height = 25
       Anchors = [akTop, akRight]
-      Caption = '&FECHAR'
+      Caption = '&EXCLUIR'
       TabOrder = 1
     end
     object btnNavigator: TDBNavigator
@@ -103,16 +110,18 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Top = 15
       Width = 236
       Height = 25
+      DataSource = DtsListagemGrid
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 2
     end
-    object btnExcluir: TButton
+    object btnSair: TButton
       Left = 569
       Top = 46
       Width = 75
       Height = 25
-      Caption = '&EXCLUIR'
+      Caption = '&SAIR'
       TabOrder = 3
+      OnClick = btnSairClick
     end
     object btnGravar: TButton
       Left = 288
@@ -121,6 +130,7 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Height = 25
       Caption = '&GRAVAR'
       TabOrder = 4
+      OnClick = btnGravarClick
     end
     object btnAlterar: TButton
       Left = 126
@@ -129,6 +139,7 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Height = 25
       Caption = '&ALTERAR'
       TabOrder = 5
+      OnClick = btnAlterarClick
     end
     object btnNovo: TButton
       Left = 45
@@ -137,6 +148,7 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Height = 25
       Caption = '&NOVO'
       TabOrder = 6
+      OnClick = btnNovoClick
     end
   end
   object QryListagemGrid: TZQuery

@@ -2,13 +2,12 @@ inherited frmCadMovBancario: TfrmCadMovBancario
   Caption = 'Movimento Banc'#225'rio'
   PixelsPerInch = 96
   TextHeight = 13
-  inherited PageControl1: TPageControl
+  inherited pgcPrincipal: TPageControl
     ActivePage = tabCadastro
     inherited tabListagem: TTabSheet
       Caption = 'Listagem'
     end
     inherited tabCadastro: TTabSheet
-      Caption = 'Cadastro'
       object Label1: TLabel
         Left = 19
         Top = 80
@@ -248,14 +247,12 @@ inherited frmCadMovBancario: TfrmCadMovBancario
           'Cr'#233'dito'
           'D'#233'bito')
       end
-      object DateTimePicker1: TDateTimePicker
-        Tag = 2
-        Left = 334
+      object edtDataMov: TDateEdit
+        Left = 336
         Top = 48
-        Width = 106
+        Width = 104
         Height = 21
-        Date = 44982.000000000000000000
-        Time = 0.451961979168118000
+        NumGlyphs = 2
         TabOrder = 8
       end
     end
@@ -264,5 +261,13 @@ inherited frmCadMovBancario: TfrmCadMovBancario
     inherited btnNavigator: TDBNavigator
       Hints.Strings = ()
     end
+  end
+  inherited QryListagemGrid: TZQuery
+    Left = 532
+    Top = 24
+  end
+  inherited DtsListagemGrid: TDataSource
+    Left = 604
+    Top = 24
   end
 end

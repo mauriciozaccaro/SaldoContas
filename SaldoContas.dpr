@@ -8,7 +8,8 @@ uses
   uCliente in 'Cadastros\uCliente.pas' {frmCadClientes},
   uCadConta in 'Cadastros\uCadConta.pas' {frmCadContas},
   uCadMovBancario in 'Movimentos\uCadMovBancario.pas' {frmCadMovBancario},
-  uDTMConexao in 'DataModule\uDTMConexao.pas' {DtmConexaoPrincipal: TDataModule};
+  uDTMConexao in 'DataModule\uDTMConexao.pas' {DtmConexaoPrincipal: TDataModule},
+  uEnum in 'Heranca\uEnum.pas';
 
 {$R *.res}
 

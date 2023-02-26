@@ -1,0 +1,10 @@
+unit uEnum;
+
+interface
+
+Type
+  TNovoAlterar = (enuNovo, enuAlterar, enuNadaOcorreu);
+
+implementation
+
+end.

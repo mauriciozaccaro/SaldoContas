@@ -1,7 +1,7 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'frmPrincipal'
+  Caption = 'SaldoContas - Teste para contrata'#231#227'o de programador'
   ClientHeight = 381
   ClientWidth = 870
   Color = clBtnFace
@@ -13,6 +13,7 @@ object frmPrincipal: TfrmPrincipal
   Menu = MainMenu1
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

@@ -1,9 +1,9 @@
 inherited frmCadClientes: TfrmCadClientes
   Caption = 'Cadastro de Clientes'
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  inherited PageControl1: TPageControl
+  inherited pgcPrincipal: TPageControl
+    ActivePage = tabCadastro
     inherited tabListagem: TTabSheet
       Caption = 'Listagem'
       inherited grdListagemGrid: TDBGrid
@@ -20,13 +20,17 @@ inherited frmCadClientes: TfrmCadClientes
           end
           item
             Expanded = False
-            FieldName = 'documento'
+            FieldName = 'numDocumento'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'situacao'
             Visible = True
           end>
       end
     end
     inherited tabCadastro: TTabSheet
-      Caption = 'Cadastro'
       ParentShowHint = False
       object edtCodigo: TLabeledEdit
         Left = 19
@@ -79,17 +83,31 @@ inherited frmCadClientes: TfrmCadClientes
   end
   inherited QryListagemGrid: TZQuery
     SQL.Strings = (
-      'SELECT IdCliente, nome, documento FROM clientes')
+      'SELECT IdCliente,'
+      '       nome,'
+      '       numDocumento,'
+      '       situacao'
+      '  FROM clientes')
     object QryListagemGridIdCliente: TLargeintField
+      DisplayLabel = 'C'#243'digo'
       FieldName = 'IdCliente'
     end
     object QryListagemGridnome: TWideStringField
+      DisplayLabel = 'Nome Cliente'
       FieldName = 'nome'
+      Required = True
       Size = 50
     end
-    object QryListagemGriddocumento: TWideStringField
-      FieldName = 'documento'
-      Size = 10
+    object QryListagemGridnumDocumento: TLargeintField
+      DisplayLabel = 'Documento'
+      FieldName = 'numDocumento'
+      Required = True
+    end
+    object QryListagemGridsituacao: TWideStringField
+      DisplayLabel = 'Ativo'
+      FieldName = 'situacao'
+      Required = True
+      Size = 1
     end
   end
 end

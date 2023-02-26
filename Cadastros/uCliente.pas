@@ -16,7 +16,8 @@ type
     ckSituacao: TCheckBox;
     QryListagemGridIdCliente: TLargeintField;
     QryListagemGridnome: TWideStringField;
-    QryListagemGriddocumento: TWideStringField;
+    QryListagemGridnumDocumento: TLargeintField;
+    QryListagemGridsituacao: TWideStringField;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
