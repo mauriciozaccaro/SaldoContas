@@ -1,6 +1,5 @@
 inherited frmCadBancos: TfrmCadBancos
   Caption = 'Cadastro de Banco'
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcPrincipal: TPageControl
@@ -48,6 +47,7 @@ inherited frmCadBancos: TfrmCadBancos
         TabOrder = 2
       end
       object edtDescricao: TLabeledEdit
+        Tag = 2
         Left = 19
         Top = 96
         Width = 178

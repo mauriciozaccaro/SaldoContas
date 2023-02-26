@@ -104,6 +104,7 @@ object frmHerancaCadastros: TfrmHerancaCadastros
       Anchors = [akTop, akRight]
       Caption = '&EXCLUIR'
       TabOrder = 1
+      OnClick = btnExcluirClick
     end
     object btnNavigator: TDBNavigator
       Left = 127

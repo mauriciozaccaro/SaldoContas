@@ -9,7 +9,8 @@ uses
   uCadConta in 'Cadastros\uCadConta.pas' {frmCadContas},
   uCadMovBancario in 'Movimentos\uCadMovBancario.pas' {frmCadMovBancario},
   uDTMConexao in 'DataModule\uDTMConexao.pas' {DtmConexaoPrincipal: TDataModule},
-  uEnum in 'Heranca\uEnum.pas';
+  uEnum in 'Heranca\uEnum.pas',
+  cBanco in 'Classes\cBanco.pas';
 
 {$R *.res}
 

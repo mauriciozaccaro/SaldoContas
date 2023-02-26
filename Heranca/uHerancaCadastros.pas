@@ -38,6 +38,7 @@ type
     procedure grdListagemGridTitleClick(Column: TColumn);
     procedure grdListagemGridDblClick(Sender: TObject);
     procedure btnGravarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -118,6 +119,21 @@ end;
 
 
 
+procedure TfrmHerancaCadastros.btnExcluirClick(Sender: TObject);
+begin
+  try
+    if Excluir = true then
+      ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnExcluir, btnNavigator, pgcPrincipal, true);
+      ControlarTab(pgcPrincipal, 0);
+  finally
+    EstadoTela  := etNenhum;
+    LimparCampos;
+    QryListagemGrid.Refresh;
+  end;
+end;
+
+
+
 procedure TfrmHerancaCadastros.btnGravarClick(Sender: TObject);
 begin
   if (CamposObrigatorios) then
@@ -126,8 +142,7 @@ begin
   try
     if Gravar(EstadoTela) then
     begin
-      ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnExcluir,
-                      btnNavigator, pgcPrincipal, true);
+      ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnExcluir, btnNavigator, pgcPrincipal, true);
       ControlarTab(pgcPrincipal, 0);
     end
     else begin
@@ -140,12 +155,16 @@ begin
   end;
 end;
 
+
+
 procedure TfrmHerancaCadastros.btnNovoClick(Sender: TObject);
 begin
   ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnExcluir, btnNavigator, pgcPrincipal, false);
-  EstadoTela    := etNovo;
+  EstadoTela      := etNovo;
   LimparCampos;
 end;
+
+
 
 procedure TfrmHerancaCadastros.btnSairClick(Sender: TObject);
 begin
@@ -223,7 +242,7 @@ begin
         end;
      end;
 
-     if(Components[i] is TLabeledEdit) then
+     if(Components[i] is TCurrencyEdit) then
      begin
         if(TCurrencyEdit(Components[i]).Tag = 2) and (TCurrencyEdit(Components[i]).text = EmptyStr) then
         begin
@@ -274,15 +293,7 @@ end;
 
 function TfrmHerancaCadastros.Excluir: Boolean;
 begin
-  try
-    if Excluir = true then
-      ControlarBotoes(btnNovo, btnAlterar, btnCancelar, btnGravar, btnExcluir, btnNavigator, pgcPrincipal, true);
-      ControlarTab(pgcPrincipal, 0);
-  finally
-    EstadoTela  := etNenhum;
-    LimparCampos;
-    QryListagemGrid.Refresh;
-  end;
+
 end;
 
 
